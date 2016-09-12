@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h2>This is the wonderous suggestoration machine!</h2>
+            </div>
+        </div>
+        <div class="container">
+            <p>What kind of thing would you looking to do?</p>  
+        </div>
+        <div class="container"> 
+            <form action="/" class="form-inline">
+                <div class="form-group">
+                    <input type="text" name="location" class="form-control" placeholder="Enter a place">
+                </div>
+                    <input type="submit" value="Show me stuff" class="btn btn-primary">
+                    
+            </form>
+        </div>
+        <a href="{{ url_for('index')}}">Back to home.</a>
+        <a href="{{url_for('about')}}">Check out the about Page.</a>
+    </body>
+</html>

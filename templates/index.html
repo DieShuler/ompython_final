@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h2>Welcome!</h2>
+            </div>
+        </div>
+        {% if location and search_term %}
+            <div class="container">
+            {% for s in suggestions %}
+                <div>
+                    <h6> Business Name: {{ s.name }}</h6>
+                    <p> Phone Number: {{ s.phone }}   User Rating: {{ s.rating }}</p>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <div class="container">
+                <h4>Allow me to help you come up with something to do today.</h4>
+            </div>
+            <div class="container">
+                <p>What kind of thing would you looking to do?</p>  
+            </div>
+            <div class="container"> 
+                <form action="/" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="location" class="form-control" placeholder="Somewhere here">
+                        <input type="text" name="search_term" class="form-control" placeholder="Somewhat here">
+                    </div>
+                        <input type="submit" value="Show me stuff" class="btn btn-primary">
+                </form>
+            </div>
+        {% endif %}
+        <div class="footer">
+            <a href=" {{url_for('about')}} ">Check out the about Page.</a>
+        </div>
+    </body>
+
+</html>
